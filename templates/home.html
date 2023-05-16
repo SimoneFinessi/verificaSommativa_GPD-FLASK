@@ -1,0 +1,18 @@
+<html>
+    <head>
+              
+    </head>
+    <body>
+       
+        
+        <form action="/es1" method = "post">
+            
+                {% for genere in list %}
+                <input type="radio" name="sel" value="{{genere}}">{{genere}}<br>
+                {% endfor %}
+            
+            <p><input type = "submit" value = "Clicca per conoscere i dati" /></p>
+        </form>
+        
+    </body>
+</html>
