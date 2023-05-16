@@ -29,13 +29,10 @@ def es1():
 @app.route('/img1', methods=["GET"])
 def img1():
     loca=request.args["sel"]
-    controllo=geodf[geodf.localizzaz.str.contains(loca)]
-
-    trovato=quar[quar.intersects(controllo.geometry.item())]
-    print(trovato[["NIL"]])
+    controllo=quar[quar.NIL.str.contains(loca)]
     fig,ax=plt.subplots()
-    controllo.to_crs(3857).plot(color="Red",ax=ax)
-    trovato.to_crs(3857).plot(facecolor="none",edgecolor="Black",ax=ax)
+    
+    controllo.to_crs(3857).plot(facecolor="none",edgecolor="Black",ax=ax)
     ctx.add_basemap(ax=ax)
 
     output = io.BytesIO()
